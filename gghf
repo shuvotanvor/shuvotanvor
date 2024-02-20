@@ -1,0 +1,25 @@
+clientID = args[0]; 
+      subName = args[1]; 
+      selector = args[2]; 
+      durable = Boolean.valueOf(args[3]).booleanValue(); 
+      transactional = Boolean.valueOf(args[4]).booleanValue(); 
+      jndiCtxFactory = args[5]; 
+      connFactory = args[6]; 
+      providerURL = args[7]; 
+      topicName = args[8]; 
+    } 
+    else 
+    { 
+      displayUsage(); 
+    } 
+ 
+    if (selector == null) 
+      selector = null; 
+    else if (selector.trim().length() == 0) 
+      selector = null; 
+    else if (selector.trim().equalsIgnoreCase("null")) 
+      selector = null; 
+ 
+ 
+    CDSBillingSubscriber s = null; 
+    try 
